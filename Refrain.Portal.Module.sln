@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{5D078BDF-7A54-4FED-9545-B619D25E357E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{25DAADDC-2457-4AB6-AB9C-A5A502E55F88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F0CF42D1-62E1-4537-83C4-109BC7B7A8D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{2265746E-3FCD-489C-A41B-FCBFE6FD17D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{4607F57F-1D45-4E19-80C6-4E965FD58C95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refrain.Portal.Module", "src\app\Refrain.Portal.Module\Refrain.Portal.Module.csproj", "{59FA9266-6A80-4D07-A2D7-72F7EBFFC664}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refrain.Portal.Module.Test", "src\test\Refrain.Portal.Module.Test\Refrain.Portal.Module.Test.csproj", "{627D2E1C-0824-4E9A-A62D-D3E04BB3CF33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59FA9266-6A80-4D07-A2D7-72F7EBFFC664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59FA9266-6A80-4D07-A2D7-72F7EBFFC664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59FA9266-6A80-4D07-A2D7-72F7EBFFC664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59FA9266-6A80-4D07-A2D7-72F7EBFFC664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{627D2E1C-0824-4E9A-A62D-D3E04BB3CF33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{627D2E1C-0824-4E9A-A62D-D3E04BB3CF33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{627D2E1C-0824-4E9A-A62D-D3E04BB3CF33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{627D2E1C-0824-4E9A-A62D-D3E04BB3CF33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5D078BDF-7A54-4FED-9545-B619D25E357E} = {25DAADDC-2457-4AB6-AB9C-A5A502E55F88}
+		{F0CF42D1-62E1-4537-83C4-109BC7B7A8D6} = {25DAADDC-2457-4AB6-AB9C-A5A502E55F88}
+		{59FA9266-6A80-4D07-A2D7-72F7EBFFC664} = {5D078BDF-7A54-4FED-9545-B619D25E357E}
+		{627D2E1C-0824-4E9A-A62D-D3E04BB3CF33} = {F0CF42D1-62E1-4537-83C4-109BC7B7A8D6}
+	EndGlobalSection
+EndGlobal
