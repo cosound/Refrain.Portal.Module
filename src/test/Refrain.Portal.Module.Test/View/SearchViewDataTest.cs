@@ -21,6 +21,19 @@
 
             Assert.That(fields[0].Key, Is.EqualTo("Id"));
             Assert.That(fields[0].Value, Is.EqualTo("10000000-0000-0000-0000-000000000001"));
+        }
+        
+        [Test]
+        public void GetIndexableFields_TextIsSet_ReturnTextField()
+        {
+            var data = new SearchViewData
+                {
+                    Id = new Guid("10000000-0000-0000-0000-000000000001"),
+                    Text = "text"
+                };
+
+            var fields = data.GetIndexableFields().ToList();
+
             Assert.That(fields[1].Key, Is.EqualTo("Text"));
             Assert.That(fields[1].Value, Is.EqualTo("text"));
         }

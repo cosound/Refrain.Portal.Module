@@ -44,23 +44,14 @@
 
                 if (identifier == null) continue;
 
-                var songSimilarities = new List<SongSimilarity>();
-
-                foreach (var pointElement in similarityElement.Descendants("EndPoints").Descendants("Point"))
-                {
-                    var guid = pointElement.Element("GUID").Value;
-                    var rank = pointElement.Element("Rank").Value;
-                    var dist = pointElement.Element("Dist").Value;
-                    var relativeImportance = pointElement.Element("RelativeImportanceOfSubspaces").Value;
-
-                    songSimilarities.Add(new SongSimilarity
-                        {
-                            SongId = new Guid(guid),
-                            Rank = uint.Parse(rank),
-                            Distance = double.Parse(dist, CultureInfo.InvariantCulture),
-                            RelativeImportance = relativeImportance
-                        });
-                }
+                var songSimilarities = (from pointElement in similarityElement.Descendants("EndPoints").Descendants("Point")
+                                        select new SongSimilarity
+                                            {
+                                                SongId = new Guid(pointElement.Element("GUID").Value), 
+                                                Rank = uint.Parse(pointElement.Element("Rank").Value), 
+                                                Distance = double.Parse(pointElement.Element("Dist").Value, CultureInfo.InvariantCulture), 
+                                                RelativeImportance = pointElement.Element("RelativeImportanceOfSubspaces").Value
+                                            }).ToList();
 
                 yield return new SongViewData
                 {
@@ -90,7 +81,8 @@
 
         public IEnumerable<KeyValuePair<string, string>> GetIndexableFields()
         {
-            throw new System.NotImplementedException();
+            yield return UniqueIdentifier;
+            yield return new KeyValuePair<string, string>("Similarity.Type", Similarity.Type);
         }
 
         public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", Id.ToString()); } }
