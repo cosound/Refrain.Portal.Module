@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using CHAOS.Serialization;
+    using Chaos.Mcm.Data.Dto;
     using Chaos.Portal.Core.Indexing.View;
     using Object = Chaos.Mcm.Data.Dto.Object;
 
@@ -32,12 +33,27 @@
 
             if(trackXml == null) yield break;
 
-            var mainTitle = trackXml.MetadataXml.Root.Element("Titles").Element("Main").Element("Title").Value;
+            var mainTitle = GetMainTitle(trackXml);
 
             yield return new SearchViewData
                 {
+                    Id = manifest.Guid,
                     Text = mainTitle
                 };
+        }
+
+        private static string GetMainTitle(Metadata trackXml)
+        {
+            if (trackXml.MetadataXml.Root == null) return null;
+
+            var titlesElement = trackXml.MetadataXml.Root.Element("Titles");
+            if (titlesElement == null) return null;
+                
+            var mainElement = titlesElement.Element("Main");
+            if (mainElement == null) return null;
+
+            var titleElement = mainElement.Element("Title");
+            return titleElement == null ? null : titleElement.Value;
         }
     }
 
@@ -51,7 +67,8 @@
 
         public IEnumerable<KeyValuePair<string, string>> GetIndexableFields()
         {
-            throw new System.NotImplementedException();
+            yield return UniqueIdentifier;
+            yield return new KeyValuePair<string, string>("Text", Text);
         }
 
         public KeyValuePair<string, string> UniqueIdentifier { get {return new KeyValuePair<string, string>("Id", Id.ToString());} }
