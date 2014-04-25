@@ -30,6 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CHAOS, Version=1.0.4985.35372, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\CHAOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Chaos.Mcm">
+      <HintPath>..\..\..\lib\Chaos.Mcm.dll</HintPath>
+    </Reference>
     <Reference Include="Chaos.Portal">
       <HintPath>..\..\..\lib\Chaos.Portal.dll</HintPath>
     </Reference>
@@ -37,10 +44,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoSoundConfiguration.cs" />
     <Compile Include="CosoundModule.cs" />
     <Compile Include="Extension\Album.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\AlbumVIew.cs" />
+    <Compile Include="View\SearchView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

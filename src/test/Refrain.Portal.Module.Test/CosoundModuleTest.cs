@@ -3,6 +3,7 @@
     using System.Linq;
     using Chaos.Portal.Core;
     using Extension;
+    using NUnit.Framework;
 
     [TestFixture]
     public class CosoundModuleTest
