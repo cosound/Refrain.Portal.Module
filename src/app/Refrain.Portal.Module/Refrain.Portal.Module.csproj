@@ -53,10 +53,9 @@
     <Compile Include="CoSoundConfiguration.cs" />
     <Compile Include="CosoundModule.cs" />
     <Compile Include="Data\IRefrainRepository.cs" />
-    <Compile Include="Extension\Album.cs" />
     <Compile Include="Extension\Search.cs" />
+    <Compile Include="Extension\Song.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\AlbumVIew.cs" />
     <Compile Include="View\SearchView.cs" />
     <Compile Include="View\SongView.cs" />
   </ItemGroup>

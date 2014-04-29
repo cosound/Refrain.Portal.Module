@@ -19,7 +19,8 @@
 
         public IEnumerable<string> GetExtensionNames(Protocol version)
         {
-            yield return "Album";
+            yield return "Search";
+            yield return "Song";
         }
 
         public IExtension GetExtension<TExtension>(Protocol version) where TExtension : IExtension
@@ -29,8 +30,11 @@
 
         public IExtension GetExtension(Protocol version, string name)
         {
-            if("Album".Equals(name))
-                return new Album(PortalApplication);
+            if ("Search".Equals(name))
+                return new Search(PortalApplication, null);
+            
+            if ("Song".Equals(name))
+                return new Song(PortalApplication);
 
             throw new ExtensionMissingException(name);
         }
@@ -41,6 +45,7 @@
             Configuration = new CoSoundConfiguration();
 
             CreateView(new SearchView(Configuration), "refrain-search");
+            CreateView(new SongView(Configuration), "refrain-song");
         }
 
         private void CreateView(IView view, string coreName)
@@ -48,6 +53,8 @@
             view.WithPortalApplication(PortalApplication);
             view.WithCache(PortalApplication.Cache);
             view.WithIndex(new SolrCore(new HttpConnection(ConfigurationManager.AppSettings["SOLR_URL"]), coreName));
+            
+            PortalApplication.ViewManager.AddView(view);
         }
     }
 }

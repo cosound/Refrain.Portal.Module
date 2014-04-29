@@ -5,6 +5,8 @@
     using System.Linq;
     using CHAOS.Serialization;
     using Chaos.Mcm.Data.Dto;
+    using Chaos.Portal.Core.Data.Model;
+    using Chaos.Portal.Core.Indexing;
     using Chaos.Portal.Core.Indexing.View;
     using Object = Chaos.Mcm.Data.Dto.Object;
 
@@ -33,6 +35,8 @@
 
             if(trackXml == null) yield break;
 
+            if(!IsEurovisionTrack(trackXml)) yield break;
+
             var mainTitle = GetMainTitle(trackXml);
 
             yield return new SearchViewData
@@ -40,6 +44,27 @@
                     Id = manifest.Guid,
                     Text = mainTitle
                 };
+        }
+
+        private bool IsEurovisionTrack(Metadata trackXml)
+        {
+            if (trackXml.MetadataXml.Root != null)
+            {
+                var source = trackXml.MetadataXml.Root.Descendants("Source");
+
+                return source.Any(element =>
+                    {
+                        var xElement = element.Element("ID");
+                        return xElement != null && xElement.Value == "DTU:ESCGigaCollection";
+                    });
+            }
+
+            return false;
+        }
+
+        public override IPagedResult<IResult> Query(IQuery query)
+        {
+            return Query<SearchViewData>(query);
         }
 
         private static string GetMainTitle(Metadata trackXml)

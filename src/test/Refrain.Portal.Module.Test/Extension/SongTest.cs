@@ -1,5 +1,6 @@
 ﻿namespace Refrain.Portal.Module.Test.Extension
 {
+    using System;
     using Chaos.Portal.Core;
     using Chaos.Portal.Core.Indexing;
     using Chaos.Portal.Core.Indexing.View;
@@ -8,7 +9,7 @@
     using NUnit.Framework;
 
     [TestFixture]
-    public class SearchTest
+    public class SongTest
     {
         private Mock<IPortalApplication> PortalApplication { get; set; }
         private Mock<IView> View { get; set; }
@@ -23,13 +24,14 @@
         [Test]
         public void Get_GivenOneWord_CallSolrWithCorrectQuery()
         {
-            var extension = new Search(PortalApplication.Object, null);
-            var query = "somestring";
-            PortalApplication.Setup(m => m.ViewManager.GetView("Search")).Returns(View.Object);
+            var extension = new Song(PortalApplication.Object);
+            var id = new Guid("10000000-0000-0000-0000-000000000001");
+            var type = "111111";
+            PortalApplication.Setup(m => m.ViewManager.GetView("Song")).Returns(View.Object);
 
-            extension.Get(query);
+            extension.Get(id, type);
 
-            View.Verify(m => m.Query(It.Is<IQuery>(item => item.Query == "(Text:\"somestring\"^5)(Text:(somestring)^2)(Text:somestring*)")));
+            View.Verify(m => m.Query(It.Is<IQuery>(item => item.Query == "Id:10000000-0000-0000-0000-000000000001_111111")));
         }
     }
 }

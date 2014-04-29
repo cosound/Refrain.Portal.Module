@@ -3,6 +3,7 @@
     using System.Linq;
     using Chaos.Portal.Core;
     using Extension;
+    using Module.Extension;
     using NUnit.Framework;
 
     [TestFixture]
@@ -15,17 +16,28 @@
 
             var results = module.GetExtensionNames(Protocol.Latest).ToList();
 
-            Assert.That(results.Contains("Album"), Is.True);
+            Assert.That(results.Contains("Search"), Is.True);
+            Assert.That(results.Contains("Song"), Is.True);
         }
 
         [Test]
-        public void GetExtension_LatestAlbum_ReturnExtension()
+        public void GetExtension_LatestSearch_ReturnExtension()
         {
             var module = Make_CosoundModule();
 
-            var result = module.GetExtension(Protocol.Latest, "Album");
+            var result = module.GetExtension(Protocol.Latest, "Search");
 
-            Assert.That(result, Is.InstanceOf<Album>());
+            Assert.That(result, Is.InstanceOf<Search>());
+        }
+
+        [Test]
+        public void GetExtension_LatestSong_ReturnExtension()
+        {
+            var module = Make_CosoundModule();
+
+            var result = module.GetExtension(Protocol.Latest, "Song");
+
+            Assert.That(result, Is.InstanceOf<Song>());
         }
 
         private static CosoundModule Make_CosoundModule()

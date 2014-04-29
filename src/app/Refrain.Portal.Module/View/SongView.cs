@@ -6,6 +6,8 @@
     using System.Linq;
     using System.Xml.Linq;
     using CHAOS.Serialization;
+    using Chaos.Portal.Core.Data.Model;
+    using Chaos.Portal.Core.Indexing;
     using Chaos.Portal.Core.Indexing.View;
     using Object = Chaos.Mcm.Data.Dto.Object;
 
@@ -17,6 +19,11 @@
         {
             Config = config;
         }
+
+        public override IPagedResult<IResult> Query(IQuery query)
+        {
+            return Query<SongViewData>(query);
+        }       
 
         public override IList<IViewData> Index(object objectsToIndex)
         {
@@ -85,7 +92,7 @@
             yield return new KeyValuePair<string, string>("Similarity.Type", Similarity.Type);
         }
 
-        public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", Id.ToString()); } }
+        public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", Id.ToString() + "_" + Similarity.Type); } }
         public string Fullname { get { return "Refrain.Portal.Module.Test.View.SongViewData"; } }
     }
 
