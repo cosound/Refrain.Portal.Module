@@ -2,14 +2,16 @@
 {
     using System;
     using System.Xml.Linq;
+    using Chaos.Mcm.Data;
     using Chaos.Mcm.Data.Dto;
-    using Module.View;
+    using Moq;
     using NUnit.Framework;
     using Object = Chaos.Mcm.Data.Dto.Object;
 
     [TestFixture]
     public class TestBase
     {
+        protected Mock<IMcmRepository> McmRepository { get; set; }
         protected Object AudioTrackObject { get; set; }
 
         protected CoSoundConfiguration Make_Config()
@@ -18,7 +20,7 @@
         }
 
         [TestFixtureSetUp]
-        public void SetupFixture()
+        public void FixtureSetUp()
         {
             var config = Make_Config();
             var track = XDocument.Load("View/AudioMusicTrack_bb8dd249c192405b8a86b3fb5ca49819_Amours_mortes_(tant_de_peine).xml");
@@ -44,6 +46,32 @@
                 };
 
             AudioTrackObject = obj;
+        }
+
+        [SetUp]
+        public void SetUp()
+        {
+            McmRepository = new Mock<IMcmRepository>();
+        }
+
+        protected Object Make_SongObject()
+        {
+            var config = Make_Config();
+            var track = XDocument.Load("View/AudioMusicTrack_fe5ce38915814fe391cfbdcc465d68d0_Hou_toch_van_mij.xml");
+
+            return new Object
+                {
+                    Guid = new Guid("fe5ce389-1581-4fe3-91cf-bdcc465d68d0"),
+                    ObjectTypeID = config.ObjectTypes.ManifestationId,
+                    Metadatas = new []
+                        {
+                            new Metadata
+                                {
+                                    MetadataSchemaGuid = config.MetadataSchemas.AudioMusicTrack,
+                                    MetadataXml = track
+                                }
+                        }
+                };
         }
     }
 }

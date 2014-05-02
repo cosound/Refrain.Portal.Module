@@ -6,18 +6,26 @@
     using System.Linq;
     using System.Xml.Linq;
     using CHAOS.Serialization;
+    using Chaos.Mcm.Data;
     using Chaos.Portal.Core.Data.Model;
     using Chaos.Portal.Core.Indexing;
     using Chaos.Portal.Core.Indexing.View;
+    using Data;
+    using Data.Model;
     using Object = Chaos.Mcm.Data.Dto.Object;
 
     public class SongView : AView
     {
         public CoSoundConfiguration Config { get; set; }
+        public IMcmRepository McmRepository { get; set; }
 
-        public SongView(CoSoundConfiguration config) : base("Song")
+        protected IDictionary<Guid, Song> SongCache { get; set; }
+
+        public SongView(CoSoundConfiguration config, IMcmRepository mcmRepository) : base("Song")
         {
             Config = config;
+            McmRepository = mcmRepository;
+            SongCache = new Dictionary<Guid, Song>();
         }
 
         public override IPagedResult<IResult> Query(IQuery query)
@@ -41,7 +49,7 @@
 
             if (similarityXml == null || similarityXml.MetadataXml.Root == null) yield break;
 
-            foreach (var similarityElement in similarityXml.MetadataXml.Root.Elements("Similarity"))
+            foreach (var similarityElement in similarityXml.MetadataXml.Descendants("Similarity"))
             {
                 var basicsElement = similarityElement.Element("Basics");
               
@@ -51,14 +59,8 @@
 
                 if (identifier == null) continue;
 
-                var songSimilarities = (from pointElement in similarityElement.Descendants("EndPoints").Descendants("Point")
-                                        select new SongSimilarity
-                                            {
-                                                SongId = new Guid(pointElement.Element("GUID").Value), 
-                                                Rank = uint.Parse(pointElement.Element("Rank").Value), 
-                                                Distance = double.Parse(pointElement.Element("Dist").Value, CultureInfo.InvariantCulture), 
-                                                RelativeImportance = pointElement.Element("RelativeImportanceOfSubspaces").Value
-                                            }).ToList();
+                var songSimilarities = (from point in similarityElement.Descendants("EndPoints").Descendants("Point")
+                                        select CreateSongSimilarity(point)).ToList();
 
                 yield return new SongViewData
                 {
@@ -71,6 +73,49 @@
                 };
             }
         }
+
+        private SongSimilarity CreateSongSimilarity(XContainer pointElement)
+        {
+            var songId = new Guid(pointElement.Element("GUID").Value);
+
+            try
+            {
+                var song = GetSong(songId);
+
+                return new SongSimilarity
+                    {
+                        SongId = songId,
+                        SongTitle = song.Title,
+                        Rank = uint.Parse(pointElement.Element("Rank").Value), 
+                        Distance = double.Parse(pointElement.Element("Dist").Value, CultureInfo.InvariantCulture), 
+                        RelativeImportance = pointElement.Element("RelativeImportanceOfSubspaces").Value
+                    };
+            }
+            catch (Exception e)
+            {
+                throw new Exception(songId.ToString(), e);
+            }
+        }
+
+        private Song GetSong(Guid songId)
+        {
+            if (SongCache.ContainsKey(songId)) 
+                return SongCache[songId];
+
+            var manifest = McmRepository.ObjectGet(songId, true);
+            var song = SongMapper.Create(manifest, Config);
+
+            SongCache.Add(songId, song);
+
+            return song;
+        }
+
+        public void WithSongCache(IDictionary<Guid, Song> cache)
+        {
+            SongCache = cache;
+        }
+
+        
     }
 
     public class SongViewData : IViewData
@@ -114,6 +159,9 @@
     {
         [Serialize]
         public Guid SongId { get; set; }
+
+        [Serialize]
+        public string SongTitle { get; set; }
 
         [Serialize]
         public uint Rank { get; set; }

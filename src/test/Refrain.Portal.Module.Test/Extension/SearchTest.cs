@@ -1,25 +1,13 @@
 ﻿namespace Refrain.Portal.Module.Test.Extension
 {
-    using Chaos.Portal.Core;
     using Chaos.Portal.Core.Indexing;
-    using Chaos.Portal.Core.Indexing.View;
     using Module.Extension;
     using Moq;
     using NUnit.Framework;
 
     [TestFixture]
-    public class SearchTest
+    public class SearchTest : TestBase
     {
-        private Mock<IPortalApplication> PortalApplication { get; set; }
-        private Mock<IView> View { get; set; }
-
-        [SetUp]
-        public void SetUp()
-        {
-            PortalApplication = new Mock<IPortalApplication>();
-            View = new Mock<IView>();
-        }
-
         [Test]
         public void Get_GivenOneWord_CallSolrWithCorrectQuery()
         {

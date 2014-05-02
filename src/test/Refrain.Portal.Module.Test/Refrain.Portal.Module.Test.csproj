@@ -52,6 +52,7 @@
     <Compile Include="CosoundModuleTest.cs" />
     <Compile Include="Extension\SongTest.cs" />
     <Compile Include="Extension\SearchTest.cs" />
+    <Compile Include="Extension\TestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\SearchViewDataTest.cs" />
     <Compile Include="View\SearchViewTest.cs" />
@@ -66,7 +67,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="View\ActorContent_18c323ca-d7c4-4493-8ad6-3e64d881c8e9.xml" />
     <Content Include="View\AudioMusicTrack_bb8dd249c192405b8a86b3fb5ca49819_Amours_mortes_%28tant_de_peine%29.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\AudioMusicTrack_fe5ce38915814fe391cfbdcc465d68d0_Hou_toch_van_mij.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="View\GenericSimilarity_bb8dd249c192405b8a86b3fb5ca49819_Amours_mortes_%28tant_de_peine%29.xml">

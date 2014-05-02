@@ -3,6 +3,8 @@
     using System.Collections.Generic;
     using System.Configuration;
     using CHAOS.Net;
+    using Chaos.Mcm;
+    using Chaos.Mcm.Data;
     using Chaos.Portal.Core;
     using Chaos.Portal.Core.Exceptions;
     using Chaos.Portal.Core.Extension;
@@ -16,6 +18,7 @@
     {
         private IPortalApplication PortalApplication { get; set; }
         private CoSoundConfiguration Configuration { get; set; }
+        private IMcmRepository McmRepository { get; set; }
 
         public IEnumerable<string> GetExtensionNames(Protocol version)
         {
@@ -34,7 +37,7 @@
                 return new Search(PortalApplication, null);
             
             if ("Song".Equals(name))
-                return new Song(PortalApplication);
+                return new Song(PortalApplication, McmRepository);
 
             throw new ExtensionMissingException(name);
         }
@@ -44,8 +47,25 @@
             PortalApplication = portalApplication;
             Configuration = new CoSoundConfiguration();
 
+            PortalApplication.OnModuleLoaded += PortalApplication_OnModuleLoaded;
+        }
+
+        private bool _areViewsLoaded = false;
+        
+        void PortalApplication_OnModuleLoaded(object sender, ApplicationDelegates.ModuleArgs args)
+        {
+            if (_areViewsLoaded) return; 
+            
+            var mcmModule = args.Module as IMcmModule;
+
+            if (mcmModule == null) return;
+
+            McmRepository = mcmModule.McmRepository;
+
             CreateView(new SearchView(Configuration), "refrain-search");
-            CreateView(new SongView(Configuration), "refrain-song");
+            CreateView(new SongView(Configuration, McmRepository), "refrain-song");
+
+            _areViewsLoaded = true;
         }
 
         private void CreateView(IView view, string coreName)

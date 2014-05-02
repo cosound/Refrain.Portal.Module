@@ -1,0 +1,683 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CoSound.Object.ActorContentStateMood.R001a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CoSound_Object_ActorContent_StateMood_R001a.xsd">
+  <Basics>
+    <Description>Twitter Mood by Country v0.1</Description>
+    <CreatedDateTime>2014-04-29T16:50:16</CreatedDateTime>
+    <Category>Mood:Twitter</Category>
+    <Series>
+      <SeriesId>1</SeriesId>
+      <SerialNumber>5</SerialNumber>
+    </Series>
+  </Basics>
+  <Analysis>
+    <Timeline>
+      <Type>Interval</Type>
+      <Domain>Countinious</Domain>
+      <Reference>Absolute</Reference>
+      <StartAtDateTime>TODO: START OF ANALYSIS PERIOD Format: yyyy-mm-ddTHH:MM:SS</StartAtDateTime>
+      <EndAtDateTime>TODO: END OF ANALYSIS PERIOD Format: yyyy-mm-ddTHH:MM:SS</EndAtDateTime>
+    </Timeline>
+    <ResultSummary>
+      <Results>
+        <Result>
+          <Type>Valence</Type>
+          <Value>0.496303185647419</Value>
+          <Variance>0.450541598502498</Variance>
+          <Notes />
+        </Result>
+      </Results>
+    </ResultSummary>
+    <ResultDetails>
+      <Data>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>1</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>2</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>3</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>4</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>5</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>6</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>7</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>8</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>9</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>10</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>11</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>12</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>13</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>14</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>15</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>16</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>17</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>18</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>19</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+        <DataPoint>
+          <Series>
+            <Id>1</Id>
+            <SerialNumber>20</SerialNumber>
+          </Series>
+          <Results>
+            <Result>
+              <Type>Valence</Type>
+              <Value>0.5</Value>
+            </Result>
+          </Results>
+          <ForeignReferences>
+            <ForeignReference>
+              <Type>Data:Twitter:Tweet</Type>
+              <URI>TWITTER LINK TO TWEET</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TWEET TEXT</Text>
+              <LanguageCode>ISOXXXX:TODO</LanguageCode>
+              <EmbeddingCode>{"cache_age":"3153600000","url":"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Twitter","version":"1.0","author_url":"https:\/\/twitter.com\/twitter","type":"rich","html":"\u003Cblockquote class=\"twitter-tweet\"\u003E\u003Cp\u003ECool! \u201C\u003Ca href=\"https:\/\/twitter.com\/tw1tt3rart\"\u003E@tw1tt3rart\u003C\/a\u003E: \u003Ca href=\"https:\/\/twitter.com\/search?q=%23TWITTERART&amp;amp;src=hash\"\u003E#TWITTERART\u003C\/a\u003E \u2571\u2571\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E\u2571\u2571\u256D\u2501\u2501\u2501\u2501\u256E \u2571\u2571\u2503\u2587\u2506\u2506\u2587\u2503\u2571\u256D\u252B\u24E6\u24D4\u24D4\u24DA\u2503 \u2571\u2571\u2503\u25BD\u25BD\u25BD\u25BD\u2503\u2501\u256F\u2503\u2661\u24D4\u24DD\u24D3\u2503 \u2571\u256D\u252B\u25B3\u25B3\u25B3\u25B3\u2523\u256E\u2571\u2570\u2501\u2501\u2501\u2501\u256F \u2571\u2503\u2503\u2506\u2506\u2506\u2506\u2503\u2503\u2571\u2571\u2571\u2571\u2571\u2571 \u2571\u2517\u252B\u2506\u250F\u2513\u2506\u2523\u251B\u2571\u2571\u2571\u2571\u2571\u201D\u003C\/p\u003E&amp;mdash; Twitter (@twitter) \u003Ca href=\"https:\/\/twitter.com\/twitter\/statuses\/99530515043983360\"\u003EAugust 5, 2011\u003C\/a\u003E\u003C\/blockquote\u003E\n","width":550}</EmbeddingCode>
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+            <ForeignReference>
+              <Type>Data:Twitter:Author</Type>
+              <URI>TWITTER LINK TO AUTHOR</URI>
+              <Id>TWITTER TWEET ID</Id>
+              <Text>TBD AuthorName</Text>
+              <LanguageCode>ISOXXXX:TBD</LanguageCode>
+              <EmbeddingCode />
+              <DateTime>2014-04-29T16:50:16</DateTime>
+            </ForeignReference>
+          </ForeignReferences>
+        </DataPoint>
+      </Data>
+    </ResultDetails>
+  </Analysis>
+  <Source>
+    <Description>External Service by DTU</Description>
+    <Type>External:DTU</Type>
+    <RevisionNumber>0.1</RevisionNumber>
+    <RevisionDate>2014-04-29T16:50:16</RevisionDate>
+    <Repository>https://todo.com:123</Repository>
+    <Contact>TBD@dtu.dk</Contact>
+  </Source>
+</CoSound.Object.ActorContentStateMood.R001a>

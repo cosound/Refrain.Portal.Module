@@ -4,10 +4,11 @@
     using System.Collections.Generic;
     using System.Linq;
     using CHAOS.Serialization;
-    using Chaos.Mcm.Data.Dto;
     using Chaos.Portal.Core.Data.Model;
     using Chaos.Portal.Core.Indexing;
     using Chaos.Portal.Core.Indexing.View;
+    using Data;
+    using Data.Model;
     using Object = Chaos.Mcm.Data.Dto.Object;
 
     public class SearchView : AView
@@ -31,54 +32,16 @@
 
         private IEnumerable<IViewData> Index(Object manifest)
         {
-            var trackXml = manifest.Metadatas.FirstOrDefault(item => item.MetadataSchemaGuid == Config.MetadataSchemas.AudioMusicTrack);
+            var song = SongMapper.Create(manifest, Config);
 
-            if(trackXml == null) yield break;
+            if(!song.IsEurovisionTrack) yield break;
 
-            if(!IsEurovisionTrack(trackXml)) yield break;
-
-            var mainTitle = GetMainTitle(trackXml);
-
-            yield return new SearchViewData
-                {
-                    Id = manifest.Guid,
-                    Text = mainTitle
-                };
-        }
-
-        private bool IsEurovisionTrack(Metadata trackXml)
-        {
-            if (trackXml.MetadataXml.Root != null)
-            {
-                var source = trackXml.MetadataXml.Root.Descendants("Source");
-
-                return source.Any(element =>
-                    {
-                        var xElement = element.Element("ID");
-                        return xElement != null && xElement.Value == "DTU:ESCGigaCollection";
-                    });
-            }
-
-            return false;
+            yield return SearchViewData.Create(song);
         }
 
         public override IPagedResult<IResult> Query(IQuery query)
         {
             return Query<SearchViewData>(query);
-        }
-
-        private static string GetMainTitle(Metadata trackXml)
-        {
-            if (trackXml.MetadataXml.Root == null) return null;
-
-            var titlesElement = trackXml.MetadataXml.Root.Element("Titles");
-            if (titlesElement == null) return null;
-                
-            var mainElement = titlesElement.Element("Main");
-            if (mainElement == null) return null;
-
-            var titleElement = mainElement.Element("Title");
-            return titleElement == null ? null : titleElement.Value;
         }
     }
 
@@ -98,5 +61,14 @@
 
         public KeyValuePair<string, string> UniqueIdentifier { get {return new KeyValuePair<string, string>("Id", Id.ToString());} }
         public string Fullname { get { return "Refrain.Portal.Module.View.SearchViewData"; } }
+
+        public static SearchViewData Create(Song song)
+        {
+            return new SearchViewData
+                {
+                    Id = song.Id,
+                    Text = song.Title
+                };
+        }
     }
 }

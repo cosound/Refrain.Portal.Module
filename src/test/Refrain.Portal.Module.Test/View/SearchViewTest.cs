@@ -20,6 +20,8 @@
             Assert.That(result.Text, Is.EqualTo("Amours mortes (tant de peine)"));
         }
 
+
+
         protected SearchView Make_SearchView()
         {
             return new SearchView(Make_Config());
