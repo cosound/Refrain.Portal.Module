@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using CHAOS.Serialization;
     using Chaos.Portal.Core.Data.Model;
@@ -53,10 +54,22 @@
         [Serialize]
         public string Text { get; set; }
 
+        [Serialize]
+        public string ArtistName { get; set; }
+
+        [Serialize]
+        public string CountryName { get; set; }
+
+        [Serialize]
+        public string ContestYear { get; set; }
+
         public IEnumerable<KeyValuePair<string, string>> GetIndexableFields()
         {
             yield return UniqueIdentifier;
-            yield return new KeyValuePair<string, string>("Text", Text);
+            yield return new KeyValuePair<string, string>("Text", Text.ToLower());
+            yield return new KeyValuePair<string, string>("Artist.Name", ArtistName.ToLower());
+            yield return new KeyValuePair<string, string>("Country.Name", CountryName.ToLower());
+            yield return new KeyValuePair<string, string>("Contest.Year", ContestYear);
         }
 
         public KeyValuePair<string, string> UniqueIdentifier { get {return new KeyValuePair<string, string>("Id", Id.ToString());} }
@@ -67,7 +80,10 @@
             return new SearchViewData
                 {
                     Id = song.Id,
-                    Text = song.Title
+                    Text = song.Title,
+                    ArtistName = song.ArtistName,
+                    CountryName = song.CountryName,
+                    ContestYear = song.ContestYear
                 };
         }
     }

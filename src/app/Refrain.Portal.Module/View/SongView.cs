@@ -49,6 +49,8 @@
 
             if (similarityXml == null || similarityXml.MetadataXml.Root == null) yield break;
 
+            var song = SongMapper.Create(manifest, Config);
+
             foreach (var similarityElement in similarityXml.MetadataXml.Descendants("Similarity"))
             {
                 var basicsElement = similarityElement.Element("Basics");
@@ -65,10 +67,13 @@
                 yield return new SongViewData
                 {
                     Id = manifest.Guid,
+                    Title = song.Title,
+                    YoutubeUri = song.YoutubeUri,
+                    SpotifyId = song.SpotifyId,
                     Similarity = new Similarity
                         {
                             Type = identifier.Value,
-                            Songs = songSimilarities
+                            Songs = songSimilarities,
                         }
                 };
             }
@@ -86,6 +91,8 @@
                     {
                         SongId = songId,
                         SongTitle = song.Title,
+                        YoutubeUri = song.YoutubeUri,
+                        SpotifyId = song.SpotifyId,
                         Rank = uint.Parse(pointElement.Element("Rank").Value), 
                         Distance = double.Parse(pointElement.Element("Dist").Value, CultureInfo.InvariantCulture), 
                         RelativeImportance = pointElement.Element("RelativeImportanceOfSubspaces").Value
@@ -105,7 +112,11 @@
             var manifest = McmRepository.ObjectGet(songId, true);
             var song = SongMapper.Create(manifest, Config);
 
-            SongCache.Add(songId, song);
+            lock (SongCache)
+            {
+                if (!SongCache.ContainsKey(songId)) 
+                    SongCache.Add(songId, song);
+            }
 
             return song;
         }
@@ -114,14 +125,21 @@
         {
             SongCache = cache;
         }
-
-        
     }
 
     public class SongViewData : IViewData
     {
         [Serialize]
         public Guid Id { get; set; }
+
+        [Serialize]
+        public string Title { get; set; }
+
+        [Serialize]
+        public string YoutubeUri { get; set; }
+
+        [Serialize]
+        public string SpotifyId { get; set; }
 
         [Serialize]
         public Similarity Similarity { get; set; }
@@ -162,6 +180,12 @@
 
         [Serialize]
         public string SongTitle { get; set; }
+
+        [Serialize]
+        public string YoutubeUri { get; set; }
+
+        [Serialize]
+        public string SpotifyId { get; set; }
 
         [Serialize]
         public uint Rank { get; set; }

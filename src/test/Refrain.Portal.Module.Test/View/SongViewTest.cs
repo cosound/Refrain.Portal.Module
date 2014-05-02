@@ -22,9 +22,14 @@
 
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Id, Is.EqualTo(new Guid("bb8dd249-c192-405b-8a86-b3fb5ca49819")));
+            Assert.That(result.Title, Is.EqualTo("Amours mortes (tant de peine)"));
+            Assert.That(result.YoutubeUri, Is.EqualTo("http://www.youtube.com/watch?v=-0nMxZ8L1cI"));
+            Assert.That(result.SpotifyId, Is.EqualTo("3g4Pmtk3Up0NCYRFqcEPsQ"));
             Assert.That(result.Similarity.Type, Is.EqualTo("000001"));
             Assert.That(result.Similarity.Songs[0].SongId, Is.EqualTo(new Guid("fe5ce389-1581-4fe3-91cf-bdcc465d68d0")));
             Assert.That(result.Similarity.Songs[0].SongTitle, Is.EqualTo("Hou toch van mij"));
+            Assert.That(result.Similarity.Songs[0].YoutubeUri, Is.EqualTo("http://www.youtube.com/watch?v=JvbH5oGZR6M"));
+            Assert.That(result.Similarity.Songs[0].SpotifyId, Is.EqualTo("2y9PZQQSbjzjQ0zBIXTWY7"));
             Assert.That(result.Similarity.Songs[0].Rank, Is.EqualTo(1));
             Assert.That(result.Similarity.Songs[0].Distance, Is.EqualTo(0.06));
             Assert.That(result.Similarity.Songs[0].RelativeImportance, Is.EqualTo("0 0 0 0 0 0.02"));

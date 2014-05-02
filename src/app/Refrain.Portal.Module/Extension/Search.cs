@@ -19,7 +19,7 @@
         {
             var q = new SolrQuery
                 {
-                    Query = string.Format("(Text:\"{0}\"^5)(Text:({0})^2)(Text:{0}*)", query),
+                    Query = string.Format("str_Text:({1}*)^5Text:(\"{0}\")^2str_Artist.Name:({1}*)^5Artist.Name:(\"{0}\")^2str_Country.Name:({1}*)^5Country.Name:(\"{0}\")^2Contest.Year:\"{0}\"", query.ToLower(), query.ToLower().Replace(" ", "\\ ")),
                     PageIndex = pageIndex,
                     PageSize = pageSize
                 };

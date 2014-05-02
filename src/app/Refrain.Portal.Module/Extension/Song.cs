@@ -2,9 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Globalization;
     using System.Linq;
-    using CHAOS.Extensions;
     using Chaos.Mcm.Data;
     using Chaos.Mcm.Extension.v6;
     using Chaos.Portal.Core;

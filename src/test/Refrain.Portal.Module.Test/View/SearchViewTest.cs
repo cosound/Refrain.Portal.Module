@@ -18,6 +18,9 @@
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Id, Is.EqualTo(new Guid("bb8dd249-c192-405b-8a86-b3fb5ca49819")));
             Assert.That(result.Text, Is.EqualTo("Amours mortes (tant de peine)"));
+            Assert.That(result.ArtistName, Is.EqualTo("Danièle Dupré"));
+            Assert.That(result.CountryName, Is.EqualTo("Luxembourg"));
+            Assert.That(result.ContestYear, Is.EqualTo("1957"));
         }
 
 
