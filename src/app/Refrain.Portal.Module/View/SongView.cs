@@ -7,11 +7,13 @@
     using System.Xml.Linq;
     using CHAOS.Serialization;
     using Chaos.Mcm.Data;
+    using Chaos.Mcm.Data.Dto;
     using Chaos.Portal.Core.Data.Model;
     using Chaos.Portal.Core.Indexing;
     using Chaos.Portal.Core.Indexing.View;
     using Data;
     using Data.Model;
+    using Exceptions;
     using Object = Chaos.Mcm.Data.Dto.Object;
 
     public class SongView : AView
@@ -51,6 +53,8 @@
 
             var song = SongMapper.Create(manifest, Config);
 
+            CacheAllSongs(similarityXml);
+
             foreach (var similarityElement in similarityXml.MetadataXml.Descendants("Similarity"))
             {
                 var basicsElement = similarityElement.Element("Basics");
@@ -68,6 +72,8 @@
                 {
                     Id = manifest.Guid,
                     Title = song.Title,
+                    ArtistName = song.ArtistName,
+                    CountryName = song.CountryName,
                     YoutubeUri = song.YoutubeUri,
                     SpotifyId = song.SpotifyId,
                     Similarity = new Similarity
@@ -76,6 +82,34 @@
                             Songs = songSimilarities,
                         }
                 };
+            }
+        }
+
+        private void CacheAllSongs(Metadata similarityXml)
+        {
+            var guids =
+                similarityXml.MetadataXml.Descendants("EndPoints")
+                             .Descendants("Guid")
+                             .Select(item => Guid.Parse(item.Value))
+                             .Distinct();
+            var missingGuids = guids.Where(item => !SongCache.ContainsKey(item));
+            IEnumerable<Guid> page;
+            for (var i = 0; (page = missingGuids.Skip(i*100).Take(100)).Any(); i++)
+            {
+                var objects = McmRepository.ObjectGet(page, true);
+
+                try
+                {
+                    var songs = objects.Select(item => SongMapper.Create(item, Config));
+
+                    foreach (var song in songs.Where(song => !SongCache.ContainsKey(song.Id)))
+                    {
+                        SongCache.Add(song.Id, song);
+                    }
+                }
+                catch (NotATrackException)
+                {
+                }
             }
         }
 
@@ -91,6 +125,8 @@
                     {
                         SongId = songId,
                         SongTitle = song.Title,
+                        ArtistName = song.ArtistName,
+                        CountryName = song.CountryName,
                         YoutubeUri = song.YoutubeUri,
                         SpotifyId = song.SpotifyId,
                         Rank = uint.Parse(pointElement.Element("Rank").Value), 
@@ -134,6 +170,12 @@
 
         [Serialize]
         public string Title { get; set; }
+
+        [Serialize]
+        public string ArtistName { get; set; }
+
+        [Serialize]
+        public string CountryName { get; set; }
 
         [Serialize]
         public string YoutubeUri { get; set; }
@@ -180,6 +222,12 @@
 
         [Serialize]
         public string SongTitle { get; set; }
+
+        [Serialize]
+        public string ArtistName { get; set; }
+
+        [Serialize]
+        public string CountryName { get; set; }
 
         [Serialize]
         public string YoutubeUri { get; set; }

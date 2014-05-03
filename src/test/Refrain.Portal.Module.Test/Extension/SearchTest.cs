@@ -18,7 +18,7 @@
             extension.Get(query);
 
             View.Verify(m => m.Query(It.Is<IQuery>(item =>
-                item.Query == "str_Text:(some\\ string*)^5Text:(\"some string\")^2str_Artist.Name:(some\\ string*)^5Artist.Name:(\"some string\")^2str_Country.Name:(some\\ string*)^5Country.Name:(\"some string\")^2Contest.Year:some string")));
+                item.Query == "str_Text:(some\\ string*)^5Text:(\"some string\")^2str_Artist.Name:(some\\ string*)^5Artist.Name:(\"some string\")^2str_Country.Name:(some\\ string*)^5Country.Name:(\"some string\")^2Contest.Year:some string(FreeText:some\\ string)")));
         }
     }
 }
