@@ -18,10 +18,13 @@
     {
         public Guid AudioMusicTrack { get { return new Guid("FFFFFFFF-FFFF-FFFF-FFFF-FFFFFF120151"); } }
         public Guid GenericSimilarity { get { return new Guid("FFFFFFFF-FFFF-FFFF-FFFF-FFFFFF120800"); } }
+        public Guid StateMood { get { return new Guid("ffffffff-ffff-ffff-ffff-ffffff220100"); } }
     }
 
     public class ObjectTypes
     {
         public uint ManifestationId { get { return 120; } }
+
+        public uint ActorContent { get { return 220; } }
     }
 }

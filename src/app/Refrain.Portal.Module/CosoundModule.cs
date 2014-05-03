@@ -64,6 +64,7 @@
 
             CreateView(new SearchView(Configuration), "refrain-search");
             CreateView(new SongView(Configuration, McmRepository), "refrain-song");
+            CreateView(new TwitterMoodView(Configuration), "refrain-twittermood");
 
             _areViewsLoaded = true;
         }

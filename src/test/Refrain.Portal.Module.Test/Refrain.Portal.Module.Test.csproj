@@ -59,6 +59,7 @@
     <Compile Include="View\SongViewDataTest.cs" />
     <Compile Include="View\SongViewTest.cs" />
     <Compile Include="View\TestBase.cs" />
+    <Compile Include="View\TwitterMoodViewTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\app\Refrain.Portal.Module\Refrain.Portal.Module.csproj">
@@ -67,7 +68,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="View\ActorContent_18c323ca-d7c4-4493-8ad6-3e64d881c8e9.xml" />
+    <Content Include="View\ActorContent_18c323ca-d7c4-4493-8ad6-3e64d881c8e9.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="View\AudioMusicTrack_bb8dd249c192405b8a86b3fb5ca49819_Amours_mortes_%28tant_de_peine%29.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

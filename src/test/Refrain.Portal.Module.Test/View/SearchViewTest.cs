@@ -23,8 +23,6 @@
             Assert.That(result.ContestYear, Is.EqualTo("1957"));
         }
 
-
-
         protected SearchView Make_SearchView()
         {
             return new SearchView(Make_Config());

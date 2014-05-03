@@ -73,5 +73,26 @@
                         }
                 };
         }
+        
+        protected Object Make_TwitterMoodObject()
+        {
+            var config = Make_Config();
+            var mood = XDocument.Load("View/ActorContent_18c323ca-d7c4-4493-8ad6-3e64d881c8e9.xml");
+
+            return new Object
+                {
+                    Guid = new Guid("18c323ca-d7c4-4493-8ad6-3e64d881c8e9"),
+                    ObjectTypeID = config.ObjectTypes.ActorContent,
+                    DateCreated = new DateTime(2014,01,01),
+                    Metadatas = new []
+                        {
+                            new Metadata
+                                {
+                                    MetadataSchemaGuid = config.MetadataSchemas.StateMood,
+                                    MetadataXml = mood
+                                }
+                        }
+                };
+        }
     }
 }
