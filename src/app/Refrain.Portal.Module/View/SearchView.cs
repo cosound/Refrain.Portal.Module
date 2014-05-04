@@ -10,6 +10,7 @@
     using Chaos.Portal.Core.Indexing.View;
     using Data;
     using Data.Model;
+    using Domain;
     using Object = Chaos.Mcm.Data.Dto.Object;
 
     public class SearchView : AView

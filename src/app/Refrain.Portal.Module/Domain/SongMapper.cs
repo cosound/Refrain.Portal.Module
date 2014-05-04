@@ -1,10 +1,10 @@
-﻿namespace Refrain.Portal.Module.Data
+namespace Refrain.Portal.Module.Domain
 {
     using System.Linq;
     using System.Xml.Linq;
     using Chaos.Mcm.Data.Dto;
+    using Data.Model;
     using Exceptions;
-    using Model;
 
     public class SongMapper
     {
@@ -12,7 +12,7 @@
         {
             var trackXml = manifest.Metadatas.FirstOrDefault(item => item.MetadataSchemaGuid == config.MetadataSchemas.AudioMusicTrack);
 
-            if (trackXml == null) throw new NotATrackException("trackXml == null");
+            if (trackXml == null) throw new CannotMapException("trackXml == null");
 
             return new Song
                 {

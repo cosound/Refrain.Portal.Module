@@ -13,6 +13,7 @@
     using Chaos.Portal.Core.Indexing.View;
     using Data;
     using Data.Model;
+    using Domain;
     using Exceptions;
     using Object = Chaos.Mcm.Data.Dto.Object;
 
@@ -111,7 +112,7 @@
                         SongCache.Add(song.Id, song);
                     }
                 }
-                catch (NotATrackException)
+                catch (CannotMapException)
                 {
                 }
             }

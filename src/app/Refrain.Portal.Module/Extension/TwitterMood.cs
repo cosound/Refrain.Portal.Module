@@ -15,20 +15,20 @@
 
         public IGroupedResult<IResult> Get(string country)
         {
-            var view = PortalApplication.ViewManager.GetView("TwitterMood");
-            var query = new SolrQuery
+            var moodView = PortalApplication.ViewManager.GetView("TwitterMood");
+
+            var moodQuery = new SolrQuery
                 {
-                    Query = GenerateQuery(country),
-                    Sort = "DateCreated desc",
-                    Group = new SolrGroup
+                    Query = GenerateQuery(country), Sort = "DateCreated desc", Group = new SolrGroup
                         {
-                            Field = "Country.Name",
-                            Limit = 1
+                            Field = "Country.Name", Limit = 1
                         },
                     PageSize = 100
                 };
 
-            return view.GroupedQuery(query); ;
+            var moodResult = moodView.GroupedQuery(moodQuery);
+
+            return moodResult;
         }
 
         private static string GenerateQuery(string country)

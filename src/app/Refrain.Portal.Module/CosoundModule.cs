@@ -25,6 +25,7 @@
             yield return "Search";
             yield return "Song";
             yield return "TwitterMood";
+            yield return "Tweet";
         }
 
         public IExtension GetExtension<TExtension>(Protocol version) where TExtension : IExtension
@@ -42,6 +43,9 @@
 
             if ("TwitterMood".Equals(name))
                 return new TwitterMood(PortalApplication);
+            
+            if ("Tweet".Equals(name))
+                return new Tweet(PortalApplication);
 
             throw new ExtensionMissingException(name);
         }
@@ -69,6 +73,7 @@
             CreateView(new SearchView(Configuration), "refrain-search");
             CreateView(new SongView(Configuration, McmRepository), "refrain-song");
             CreateView(new TwitterMoodView(Configuration), "refrain-twittermood");
+            CreateView(new TweetView(Configuration), "refrain-tweet");
 
             _areViewsLoaded = true;
         }

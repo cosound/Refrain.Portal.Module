@@ -11,6 +11,7 @@
     using Chaos.Portal.Core.Extension;
     using Chaos.Portal.Core.Indexing.Solr.Request;
     using Data;
+    using Domain;
     using Exceptions;
     using View;
 
@@ -44,7 +45,7 @@
                         cache.Add(song.Id, song);
                     }
                 }
-                catch (NotATrackException)
+                catch (CannotMapException)
                 {
                 }
 

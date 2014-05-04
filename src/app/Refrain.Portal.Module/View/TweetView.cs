@@ -1,7 +1,7 @@
 ﻿namespace Refrain.Portal.Module.View
 {
+    using System;
     using System.Collections.Generic;
-    using System.Globalization;
     using System.Linq;
     using Chaos.Portal.Core.Data.Model;
     using Chaos.Portal.Core.Indexing;
@@ -9,34 +9,39 @@
     using Domain;
     using Domain.Dto;
     using Exceptions;
+    using Object = Chaos.Mcm.Data.Dto.Object;
 
-    public class TwitterMoodView : AView
+    public class TweetView : AView
     {
         public CoSoundConfiguration Config { get; set; }
 
-        public TwitterMoodView(CoSoundConfiguration config) : base("TwitterMood")
+        public TweetView(CoSoundConfiguration coSoundConfiguration) : base("Tweet")
         {
-            Config = config;
+            Config = coSoundConfiguration;
         }
 
         public override IList<IViewData> Index(object objectsToIndex)
         {
-            var obj = objectsToIndex as Chaos.Mcm.Data.Dto.Object;
+            var obj = objectsToIndex as Object;
 
+            if(obj == null) return new List<IViewData>();
+
+            return Index(obj).ToList();
+        }
+        
+        public IEnumerable<IViewData> Index(Object moodState)
+        {
             try
             {
-                var twitterMood = TwitterMoodMapper.Create(obj, Config);
+                var twitterMood = TwitterMoodMapper.Create(moodState, Config);
 
-                return new[]
-                    { 
-                        new TwitterMoodViewData
-                            {
-                                Id = twitterMood.Id,
-                                Valence = twitterMood.Valence,
-                                Country = twitterMood.Country,
-                                DateCreated = twitterMood.DateCreated
-                            }
-                    };
+                return twitterMood.Tweets.Select(item => new TweetViewData
+                    {
+                        Country = twitterMood.Country,
+                        DateCreated = twitterMood.DateCreated,
+                        EmbedCode = item.EmbedCode,
+                        Id = item.Id
+                    });
             }
             catch (CannotMapException e)
             {
@@ -48,7 +53,7 @@
         {
             var response = Core.Query(query);
 
-            var lst = new List<ResultGroup<TwitterMoodViewData>>();
+            var lst = new List<ResultGroup<TweetViewData>>();
 
             foreach (var queryResultGroup in response.QueryResultGroups)
             {
@@ -58,26 +63,29 @@
 
                     var startIndex = queryResult.StartIndex;
                     var totalCount = queryResult.FoundCount;
-                    var results = Cache.Get<TwitterMoodViewData>(keys);
+                    var results = Cache.Get<TweetViewData>(keys);
 
-                    lst.Add(new ResultGroup<TwitterMoodViewData>(totalCount, startIndex, results.ToList()) { Value = queryResult.Value });
+                    lst.Add(new ResultGroup<TweetViewData>(totalCount, startIndex, results.ToList()) { Value = queryResult.Value });
                 }
             }
 
-            return new GroupedResult<TwitterMoodViewData>(lst);
+            return new GroupedResult<TweetViewData>(lst);
         }
     }
 
-    public class TwitterMoodViewData : TwitterMood, IViewData
+    public class TweetViewData : Tweet, IViewData
     {
-        public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", Id.ToString()); } }
-        public string Fullname { get { return "Refrain.Portal.Module.View.TwitterMoodViewData"; } }
+        public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", Id); } }
+        public string Fullname { get { return "Refrain.Portal.Module.View.TweetViewData"; } }
+
+        public string Country { get; set; }
+
+        public DateTime DateCreated { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> GetIndexableFields()
         {
             yield return UniqueIdentifier;
             yield return new KeyValuePair<string, string>("Country.Name", Country);
-            yield return new KeyValuePair<string, string>("Valence", Valence.ToString(CultureInfo.InvariantCulture));
             yield return new KeyValuePair<string, string>("DateCreated", DateCreated.ToString("yyyy-MM-dd'T'hh:mm:ss'Z'"));
         }
     }
