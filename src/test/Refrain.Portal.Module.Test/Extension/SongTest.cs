@@ -19,7 +19,7 @@
 
             extension.Get(id, type);
 
-            View.Verify(m => m.Query(It.Is<IQuery>(item => item.Query == "Id:10000000-0000-0000-0000-000000000001_111111")));
+            View.Verify(m => m.Query(It.Is<IQuery>(item => item.Query == "Id:10000000-0000-0000-0000-000000000001_111111_3")));
         }
     }
 }

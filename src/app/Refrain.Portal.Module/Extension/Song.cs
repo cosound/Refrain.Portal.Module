@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using Chaos.Mcm.Data;
     using Chaos.Mcm.Extension.v6;
@@ -57,11 +58,11 @@
             return trace;
         }
 
-        public IPagedResult<IResult> Get(Guid id, string type)
+        public IPagedResult<IResult> Get(Guid id, string type, uint dataSet = 3)
         {
             var query = new SolrQuery
                 {
-                    Query = String.Format("Id:{0}_{1}", id, type),
+                    Query = String.Format("Id:{0}_{1}_{2}", id, type, dataSet.ToString(CultureInfo.InvariantCulture)),
                     PageSize = 1
                 };
 

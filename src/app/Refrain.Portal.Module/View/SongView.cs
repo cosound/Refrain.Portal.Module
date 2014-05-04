@@ -206,10 +206,9 @@
         {
             yield return UniqueIdentifier;
             yield return new KeyValuePair<string, string>("Similarity.Type", Similarity.Type);
-            yield return new KeyValuePair<string, string>("DataSet", DataSet.ToString(CultureInfo.InvariantCulture));
         }
 
-        public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", Id.ToString() + "_" + Similarity.Type); } }
+        public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", string.Format("{0}_{1}_{2}", Id.ToString(), Similarity.Type, DataSet.ToString(CultureInfo.InvariantCulture))); } }
         public string Fullname { get { return "Refrain.Portal.Module.Test.View.SongViewData"; } }
     }
 
