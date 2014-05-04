@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CosoundModuleTest.cs" />
+    <Compile Include="Extension\TwitterMoodTest.cs" />
     <Compile Include="Extension\SongTest.cs" />
     <Compile Include="Extension\SearchTest.cs" />
     <Compile Include="Extension\TestBase.cs" />

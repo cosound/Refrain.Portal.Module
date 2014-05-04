@@ -6,13 +6,15 @@
     using System.Linq;
     using System.Xml.Linq;
     using CHAOS.Serialization;
+    using Chaos.Portal.Core.Data.Model;
+    using Chaos.Portal.Core.Indexing;
     using Chaos.Portal.Core.Indexing.View;
 
     public class TwitterMoodView : AView
     {
         public CoSoundConfiguration Config { get; set; }
 
-        public TwitterMoodView(CoSoundConfiguration config) : base("Twitter")
+        public TwitterMoodView(CoSoundConfiguration config) : base("TwitterMood")
         {
             Config = config;
         }
@@ -21,14 +23,28 @@
         {
             var obj = objectsToIndex as Chaos.Mcm.Data.Dto.Object;
 
-            if(obj == null) return new List<IViewData>();
+            if (obj == null || obj.ObjectTypeID != Config.ObjectTypes.ActorContent) return new List<IViewData>();
 
             var metadata = obj.Metadatas.FirstOrDefault(item => item.MetadataSchemaGuid == Config.MetadataSchemas.StateMood);
 
             if(metadata == null) return new List<IViewData>();
 
-            var valence = metadata.MetadataXml.Descendants("ResultSummary").Descendants("Result").FirstOrDefault(r => r.Element("Type").Value == "Valence").Element("Value").Value;
-            var country = metadata.MetadataXml.Descendants("Actor").Descendants("Main").First().Value;
+            var firstOrDefault = metadata.MetadataXml.Descendants("ResultSummary").Descendants("Result").FirstOrDefault(r =>
+                {
+                    var xElement = r.Element("Type");
+                    return xElement != null && xElement.Value == "Valence";
+                });
+            if (firstOrDefault == null) return new List<IViewData>();
+
+            var element = firstOrDefault.Element("Value");
+            if (element == null) return new List<IViewData>();
+             
+            var valence = element.Value;
+
+            var orDefault = metadata.MetadataXml.Descendants("Actor").Descendants("Main").FirstOrDefault();
+            if (orDefault == null) return new List<IViewData>(); 
+            
+            var country = orDefault.Value;
 
             return new[]
                 {
@@ -40,6 +56,29 @@
                             DateCreated = obj.DateCreated
                         }
                 };
+        }
+
+        public override IGroupedResult<IResult> GroupedQuery(IQuery query)
+        {
+            var response = Core.Query(query);
+
+            var lst = new List<ResultGroup<TwitterMoodViewData>>();
+
+            foreach (var queryResultGroup in response.QueryResultGroups)
+            {
+                foreach (var queryResult in queryResultGroup.Groups)
+                {
+                    var keys = queryResult.Results.Select(item => CreateKey(item.Id));
+
+                    var startIndex = queryResult.StartIndex;
+                    var totalCount = queryResult.FoundCount;
+                    var results = Cache.Get<TwitterMoodViewData>(keys);
+
+                    lst.Add(new ResultGroup<TwitterMoodViewData>(totalCount, startIndex, results.ToList()) { Value = queryResult.Value });
+                }
+            }
+
+            return new GroupedResult<TwitterMoodViewData>(lst);
         }
     }
 

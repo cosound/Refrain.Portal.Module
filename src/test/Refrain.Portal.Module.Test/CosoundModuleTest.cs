@@ -2,7 +2,6 @@
 {
     using System.Linq;
     using Chaos.Portal.Core;
-    using Extension;
     using Module.Extension;
     using NUnit.Framework;
 
@@ -18,6 +17,7 @@
 
             Assert.That(results.Contains("Search"), Is.True);
             Assert.That(results.Contains("Song"), Is.True);
+            Assert.That(results.Contains("TwitterMood"), Is.True);
         }
 
         [Test]
@@ -38,6 +38,16 @@
             var result = module.GetExtension(Protocol.Latest, "Song");
 
             Assert.That(result, Is.InstanceOf<Song>());
+        }
+
+        [Test]
+        public void GetExtension_LatestTwitterMood_ReturnExtension()
+        {
+            var module = Make_CosoundModule();
+
+            var result = module.GetExtension(Protocol.Latest, "TwitterMood");
+
+            Assert.That(result, Is.InstanceOf<TwitterMood>());
         }
 
         private static CosoundModule Make_CosoundModule()

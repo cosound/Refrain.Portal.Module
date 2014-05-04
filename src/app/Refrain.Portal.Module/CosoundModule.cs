@@ -24,6 +24,7 @@
         {
             yield return "Search";
             yield return "Song";
+            yield return "TwitterMood";
         }
 
         public IExtension GetExtension<TExtension>(Protocol version) where TExtension : IExtension
@@ -38,6 +39,9 @@
             
             if ("Song".Equals(name))
                 return new Song(PortalApplication, McmRepository);
+
+            if ("TwitterMood".Equals(name))
+                return new TwitterMood(PortalApplication);
 
             throw new ExtensionMissingException(name);
         }
