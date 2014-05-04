@@ -61,6 +61,8 @@
               
                 if (basicsElement == null) continue;
 
+                var name = basicsElement.Element("Name").Value;
+                var dataSet = (name.Contains("Spotify") ? DataSet.Spotify : 0) | (name.Contains("ESC") ? DataSet.Eurovision : 0);
                 var identifier = basicsElement.Descendants("Identifier").FirstOrDefault();
 
                 if (identifier == null) continue;
@@ -74,8 +76,10 @@
                     Title = song.Title,
                     ArtistName = song.ArtistName,
                     CountryName = song.CountryName,
+                    Year = song.ContestYear,
                     YoutubeUri = song.YoutubeUri,
                     SpotifyId = song.SpotifyId,
+                    DataSet = (uint)dataSet,
                     Similarity = new Similarity
                         {
                             Type = identifier.Value,
@@ -127,6 +131,7 @@
                         SongTitle = song.Title,
                         ArtistName = song.ArtistName,
                         CountryName = song.CountryName,
+                        Year = song.ContestYear,
                         YoutubeUri = song.YoutubeUri,
                         SpotifyId = song.SpotifyId,
                         Rank = uint.Parse(pointElement.Element("Rank").Value), 
@@ -178,10 +183,16 @@
         public string CountryName { get; set; }
 
         [Serialize]
+        public string Year { get; set; }
+
+        [Serialize]
         public string YoutubeUri { get; set; }
 
         [Serialize]
         public string SpotifyId { get; set; }
+
+        [Serialize]
+        public uint DataSet { get; set; }
 
         [Serialize]
         public Similarity Similarity { get; set; }
@@ -195,10 +206,18 @@
         {
             yield return UniqueIdentifier;
             yield return new KeyValuePair<string, string>("Similarity.Type", Similarity.Type);
+            yield return new KeyValuePair<string, string>("DataSet", DataSet.ToString(CultureInfo.InvariantCulture));
         }
 
         public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", Id.ToString() + "_" + Similarity.Type); } }
         public string Fullname { get { return "Refrain.Portal.Module.Test.View.SongViewData"; } }
+    }
+
+    [Flags]
+    public enum DataSet : uint
+    {
+        Eurovision = 1 << 0,
+        Spotify = 1 << 1
     }
 
     public class Similarity
@@ -228,6 +247,9 @@
 
         [Serialize]
         public string CountryName { get; set; }
+
+        [Serialize]
+        public string Year { get; set; }
 
         [Serialize]
         public string YoutubeUri { get; set; }
