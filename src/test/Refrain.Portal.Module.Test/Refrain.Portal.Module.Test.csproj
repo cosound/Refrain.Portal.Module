@@ -80,6 +80,10 @@
     <Content Include="View\AudioMusicTrack_fe5ce38915814fe391cfbdcc465d68d0_Hou_toch_van_mij.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="View\ActorContent_74934fa247f144aa8e6bc96e9bc594f4.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="View\GenericSimilarity_bb8dd249c192405b8a86b3fb5ca49819_Amours_mortes_%28tant_de_peine%29.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

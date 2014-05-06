@@ -78,7 +78,7 @@
             yield return UniqueIdentifier;
             yield return new KeyValuePair<string, string>("Country.Name", Country);
             yield return new KeyValuePair<string, string>("Valence", Valence.ToString(CultureInfo.InvariantCulture));
-            yield return new KeyValuePair<string, string>("DateCreated", DateCreated.ToString("yyyy-MM-dd'T'hh:mm:ss'Z'"));
+            yield return new KeyValuePair<string, string>("DateCreated", DateCreated.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"));
         }
     }
 }
