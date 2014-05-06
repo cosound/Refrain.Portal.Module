@@ -19,13 +19,48 @@
         {
             var q = new SolrQuery
                 {
-                    Query = string.Format("str_Text:({1}*)^5Text:(\"{0}\")^2str_Artist.Name:({1}*)^5Artist.Name:(\"{0}\")^2str_Country.Name:({1}*)^5Country.Name:(\"{0}\")^2Contest.Year:{0}(FreeText:{0})", query.ToLower(), query.ToLower().Replace(" ", "\\ ")),
+                    Query = GenerateQuery(query),
+                    Filter = GenerateFilter(query),
                     PageIndex = pageIndex,
                     PageSize = pageSize
                 };
 
             var view = PortalApplication.ViewManager.GetView("Search");
             return view.Query(q);
+        }
+
+        private static string GenerateQuery(string query)
+        {
+            var terms = query.Split(' ');
+
+            if (terms.Length == 1)
+            {
+                var year = GetYearOrZero(terms[0]);
+
+                if (year != 0) return "*:*";
+            }
+
+            return string.Format("str_Text:({1}*)^25Text:({0}*)^15str_Artist.Name:({1}*)^15Artist.Name:({0}*)^5str_Country.Name:({1}*)^5Country.Name:({0}*)", query.ToLower(), query.ToLower().Replace(" ", "\\ "));
+        }
+
+        private string GenerateFilter(string query)
+        {
+            var year = GetYearOrZero(query);
+
+            return year == 0 ? "" : string.Format("Contest.Year:{0}", year);
+        }
+
+        private static int GetYearOrZero(string query)
+        {
+            var terms = query.Split(' ');
+            var year = 0;
+
+             foreach (var word in terms)
+            {
+                if (int.TryParse(word, out year)) break;
+            }
+
+            return year;
         }
     }
 }
