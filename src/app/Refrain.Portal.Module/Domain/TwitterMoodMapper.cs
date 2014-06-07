@@ -1,11 +1,12 @@
 ﻿namespace Refrain.Portal.Module.Domain
 {
+    using System;
     using System.Globalization;
     using System.Linq;
     using System.Xml.Linq;
-    using Chaos.Mcm.Data.Dto;
     using Dto;
     using Exceptions;
+    using Object = Chaos.Mcm.Data.Dto.Object;
 
     public class TwitterMoodMapper
     {
@@ -18,6 +19,9 @@
 
             if (metadata == null)
                 throw new CannotMapException(string.Format("Twitter Mood Metadata Schema not found one object {0}",  obj.Guid));
+
+            var datetime = metadata.MetadataXml.Descendants("Basics").Elements("CreatedDateTime").FirstOrDefault();
+            if(datetime == null) throw new CannotMapException("CreatedDateTime not found in metadata");
 
             var resultSummeryElement = metadata.MetadataXml.Descendants("ResultSummary").Descendants("Result").FirstOrDefault(r =>
                 {
@@ -59,7 +63,7 @@
                             EmbedCode = item.Element("EmbeddingCode").Value, 
                             Id = item.Element("Id").Value
                         }).ToList(),
-                    DateCreated = obj.DateCreated
+                    DateCreated = DateTime.ParseExact(datetime.Value, "yyyy-MM-dd'T'HH-mm-ss", CultureInfo.InvariantCulture)
                 };
         }
     }

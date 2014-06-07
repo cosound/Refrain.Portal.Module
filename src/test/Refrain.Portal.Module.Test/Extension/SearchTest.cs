@@ -1,5 +1,6 @@
 ﻿namespace Refrain.Portal.Module.Test.Extension
 {
+    using System;
     using Chaos.Portal.Core.Indexing;
     using Module.Extension;
     using Moq;
@@ -32,7 +33,7 @@
 
             extension.Get(query);
 
-            var actual = "Contest.Year:2000";
+            var actual = "(Contest.Year:2000)AND(IsESC:true)";
             View.Verify(m => m.Query(It.Is<IQuery>(item =>
                 item.Query == "*:*" &&
                 item.Filter == actual)));
@@ -48,10 +49,23 @@
             extension.Get(query);
 
             var actualQuery = "str_Text:(2014\\ basim*)^25Text:(2014 basim*)^15str_Artist.Name:(2014\\ basim*)^15Artist.Name:(2014 basim*)^5str_Country.Name:(2014\\ basim*)^5Country.Name:(2014 basim*)";
-            var actualFilter = "Contest.Year:2014";
+            var actualFilter = "(Contest.Year:2014)AND(IsESC:true)";
             View.Verify(m => m.Query(It.Is<IQuery>(item =>
                 item.Query == actualQuery &&
                 item.Filter == actualFilter)));
+        }
+
+        [Test]
+        public void By_GivenId_CallSolrWithCorrectQuery()
+        {
+            var extension = new Search(PortalApplication.Object, null);
+            PortalApplication.Setup(m => m.ViewManager.GetView("Search")).Returns(View.Object);
+
+            extension.By(new Guid("10000000-0000-0000-0000-000000000001"));
+
+            var actualQuery = "Id:10000000-0000-0000-0000-000000000001";
+            View.Verify(m => m.Query(It.Is<IQuery>(item =>
+                item.Query == actualQuery)));
         }
     }
 }

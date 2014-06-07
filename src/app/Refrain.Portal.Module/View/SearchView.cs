@@ -36,9 +36,15 @@
         {
             var song = SongMapper.Create(manifest, Config);
 
-            if(!song.IsEurovisionTrack) yield break;
-
-            yield return SearchViewData.Create(song);
+            yield return new SearchViewData
+            {
+                Id = song.Id,
+                Text = song.Title,
+                ArtistName = song.ArtistName,
+                CountryName = song.CountryName,
+                ContestYear = song.ContestYear,
+                IsEurovision = song.IsEurovisionTrack
+            }; ;
         }
 
         public override IPagedResult<IResult> Query(IQuery query)
@@ -64,28 +70,30 @@
         [Serialize]
         public string ContestYear { get; set; }
 
+        [Serialize]
+        public bool IsEurovision { get; set; }
+
         public IEnumerable<KeyValuePair<string, string>> GetIndexableFields()
         {
             yield return UniqueIdentifier;
-            yield return new KeyValuePair<string, string>("Text", Text.ToLower());
-            yield return new KeyValuePair<string, string>("Artist.Name", ArtistName.ToLower());
-            yield return new KeyValuePair<string, string>("Country.Name", CountryName.ToLower());
-            yield return new KeyValuePair<string, string>("Contest.Year", ContestYear);
+
+            if (!string.IsNullOrEmpty(Text))
+                yield return new KeyValuePair<string, string>("Text", Text.ToLower());
+
+            if (!string.IsNullOrEmpty(ArtistName))
+                yield return new KeyValuePair<string, string>("Artist.Name", ArtistName.ToLower());
+
+            if (!string.IsNullOrEmpty(CountryName))
+                yield return new KeyValuePair<string, string>("Country.Name", CountryName.ToLower());
+
+            if (!string.IsNullOrEmpty(ContestYear))
+                yield return new KeyValuePair<string, string>("Contest.Year", ContestYear);
+
+            yield return new KeyValuePair<string, string>("IsESC", IsEurovision.ToString().ToLower());
         }
 
         public KeyValuePair<string, string> UniqueIdentifier { get {return new KeyValuePair<string, string>("Id", Id.ToString());} }
         public string Fullname { get { return "Refrain.Portal.Module.View.SearchViewData"; } }
 
-        public static SearchViewData Create(Song song)
-        {
-            return new SearchViewData
-                {
-                    Id = song.Id,
-                    Text = song.Title,
-                    ArtistName = song.ArtistName,
-                    CountryName = song.CountryName,
-                    ContestYear = song.ContestYear
-                };
-        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace Refrain.Portal.Module.Extension
 {
+    using System;
     using Chaos.Portal.Core;
     using Chaos.Portal.Core.Data.Model;
     using Chaos.Portal.Core.Extension;
@@ -47,7 +48,7 @@
         {
             var year = GetYearOrZero(query);
 
-            return year == 0 ? "" : string.Format("Contest.Year:{0}", year);
+            return year == 0 ? "" : string.Format("(Contest.Year:{0})AND(IsESC:true)", year);
         }
 
         private static int GetYearOrZero(string query)
@@ -61,6 +62,18 @@
             }
 
             return year;
+        }
+
+        public IPagedResult<IResult> By(Guid id)
+        {
+            var q = new SolrQuery
+                {
+                    Query = "Id:" + id,
+                    PageSize = 1
+                };
+
+            var view = PortalApplication.ViewManager.GetView("Search");
+            return view.Query(q); 
         }
     }
 }
