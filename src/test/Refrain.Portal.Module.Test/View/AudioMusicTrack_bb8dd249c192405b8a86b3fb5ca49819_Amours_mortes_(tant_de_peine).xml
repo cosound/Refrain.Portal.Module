@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+﻿<?xml version="1.0" encoding="UTF-8"?> 
  <ManifestationAudioMusicTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CoSound_Object_Manifestation_Audio_R001a.xsd">
   <Source>
     <ID>DTU:ESCGigaCollection</ID>
@@ -8,20 +8,20 @@
       <ID>1</ID>
     </Revision>
   </Source>
-  <Identifiers>
-    <Identifier>
+  <Identityentifiers>
+    <Identityentifier>
       <Type>File:SourceFileName</Type>
       <ID>be023faf81d9475a074f1bd2576b4ca0.mp3</ID>
-    </Identifier>
-    <Identifier>
+    </Identityentifier>
+    <Identityentifier>
       <Type>File:SourceFileName:MD5</Type>
       <ID>TODO</ID>
-    </Identifier>
-    <Identifier>
+    </Identityentifier>
+    <Identityentifier>
       <Type>Other:FileName</Type>
       <ID>\\comp-nas3.compute.dtu.dk\dtu-compute\cosound\data\_esc\mp3\1957\1957-02-LUX%20Dani%e8le%20Dupr%e9%20-%20Tant%20De%20Peine.mp3</ID>
-    </Identifier>
-  </Identifiers>
+    </Identityentifier>
+  </Identityentifiers>
   <Titles>
     <Main>
       <Title>Amours mortes (tant de peine)</Title>
@@ -177,8 +177,8 @@
     <ForeignReference>
       <Description>DTU Compute Echonest AudioFeatures</Description>
       <Type>Data</Type>
-      <Id/> 
-      <IdPrefix>file://</IdPrefix>
+      <Identity/> 
+      <IdentityPrefix>file://</IdentityPrefix>
       <URI>\\comp-nas3.compute.dtu.dk\dtu-compute\cosound\data\_esc\mp3_features\1957\be023faf81d9475a074f1bd2576b4ca0.mp3.mat</URI>
       <Other>Giga Collection AudioFeatures from Echonest</Other>
       <Status/> 
@@ -186,8 +186,8 @@
     <ForeignReference>
       <Description>Youtube</Description>
       <Type>Youtube</Type>
-      <Id>-0nMxZ8L1cI</Id>
-      <IdPrefix>http://</IdPrefix>
+      <Identity>-0nMxZ8L1cI</Identity>
+      <IdentityPrefix>http://</IdentityPrefix>
       <URI>http://www.youtube.com/watch?v=-0nMxZ8L1cI</URI>
       <Other>Eurovision 1957.</Other>
       <Status/> 
@@ -195,8 +195,8 @@
     <ForeignReference>
       <Description>Spotify (Matched!)</Description>
       <Type>Spotify</Type>
-      <Id>3g4Pmtk3Up0NCYRFqcEPsQ</Id>
-      <IdPrefix>http://</IdPrefix>
+      <Identity>3g4Pmtk3Up0NCYRFqcEPsQ</Identity>
+      <IdentityPrefix>http://</IdentityPrefix>
       <URI>http://spotify TODO</URI>
       <Other/> 
       <Status/> 
@@ -204,8 +204,8 @@
     <ForeignReference>
       <Description>Wikipedia</Description>
       <Type>Data</Type>
-      <Id/> 
-      <IdPrefix>http://</IdPrefix>
+      <Identity/> 
+      <IdentityPrefix>http://</IdentityPrefix>
       <URI/> 
       <Other>Short Text: </Other>
       <Status>Other:Automatic wiki search</Status>

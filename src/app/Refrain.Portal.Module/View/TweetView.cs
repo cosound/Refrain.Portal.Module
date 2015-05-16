@@ -40,7 +40,7 @@
                         Country = twitterMood.Country,
                         DateCreated = twitterMood.DateCreated,
                         EmbedCode = item.EmbedCode,
-                        Id = item.Id
+                        Identity = item.Identity
                     });
             }
             catch (CannotMapException e)
@@ -75,7 +75,7 @@
 
     public class TweetViewData : Tweet, IViewData
     {
-        public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", Id); } }
+        public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", Identity); } }
         public string Fullname { get { return "Refrain.Portal.Module.View.TweetViewData"; } }
 
         public string Country { get; set; }

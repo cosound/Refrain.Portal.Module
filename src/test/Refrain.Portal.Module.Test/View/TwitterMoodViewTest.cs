@@ -15,9 +15,9 @@
 
             var result = view.Index(moodObject).First() as TwitterMoodViewData;
 
-            Assert.That(result.Id, Is.EqualTo(moodObject.Guid));
+            Assert.That(result.Identity, Is.EqualTo(moodObject.Guid));
             Assert.That(result.Country, Is.EqualTo("azerbaijan"));
-            Assert.That(result.DateCreated, Is.EqualTo(new DateTime(2014, 05, 03, 23, 08, 51)));
+            Assert.That(result.DateCreated, Is.EqualTo(new DateTime(2014, 05, 03, 21, 16, 55)));
         }
 
         [Test]
@@ -37,7 +37,7 @@
         {
             return new TwitterMoodViewData
                 {
-                    Id = new Guid("10000000-0000-0000-0000-000000000001"),
+                    Identity = new Guid("10000000-0000-0000-0000-000000000001"),
                     Country = "country",
                     Valence = 0.4,
                     DateCreated = new DateTime(2000, 01, 01, 10,00,00)

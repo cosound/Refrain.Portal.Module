@@ -31,7 +31,7 @@
                     { 
                         new TwitterMoodViewData
                             {
-                                Id = twitterMood.Id,
+                                Identity = twitterMood.Identity,
                                 Valence = twitterMood.Valence,
                                 Country = twitterMood.Country,
                                 DateCreated = twitterMood.DateCreated
@@ -70,7 +70,7 @@
 
     public class TwitterMoodViewData : TwitterMood, IViewData
     {
-        public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", Id.ToString()); } }
+        public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", Identity.ToString()); } }
         public string Fullname { get { return "Refrain.Portal.Module.View.TwitterMoodViewData"; } }
 
         public IEnumerable<KeyValuePair<string, string>> GetIndexableFields()

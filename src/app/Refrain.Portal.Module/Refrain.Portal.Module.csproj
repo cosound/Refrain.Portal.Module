@@ -40,16 +40,22 @@
     <Reference Include="Chaos.Portal">
       <HintPath>..\..\..\lib\Chaos.Portal.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\..\tools\NUnit-2.6.0.12051\bin\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Context.cs" />
     <Compile Include="CoSoundConfiguration.cs" />
     <Compile Include="CosoundModule.cs" />
     <Compile Include="Data\IRefrainRepository.cs" />
@@ -59,6 +65,7 @@
     <Compile Include="Domain\SongMapper.cs" />
     <Compile Include="Domain\TwitterMoodMapper.cs" />
     <Compile Include="Exceptions\CannotMapException.cs" />
+    <Compile Include="Extension\MetricRating.cs" />
     <Compile Include="Extension\Tweet.cs" />
     <Compile Include="Extension\Search.cs" />
     <Compile Include="Extension\Song.cs" />

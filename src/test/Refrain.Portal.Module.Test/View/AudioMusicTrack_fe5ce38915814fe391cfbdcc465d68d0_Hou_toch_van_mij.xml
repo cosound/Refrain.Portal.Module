@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+﻿<?xml version="1.0" encoding="UTF-8"?> 
  <ManifestationAudioMusicTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CoSound_Object_Manifestation_Audio_R001a.xsd">
   <Source>
     <ID>DTU:ESCGigaCollection</ID>
@@ -177,8 +177,8 @@
     <ForeignReference>
       <Description>DTU Compute Echonest AudioFeatures</Description>
       <Type>Data</Type>
-      <Id/> 
-      <IdPrefix>file://</IdPrefix>
+      <Identity/> 
+      <IdentityPrefix>file://</IdentityPrefix>
       <URI>\\comp-nas3.compute.dtu.dk\dtu-compute\cosound\data\_esc\mp3_features\1959\b90e3e440972efc71d9557963aff243a.mp3.mat</URI>
       <Other>Giga Collection AudioFeatures from Echonest</Other>
       <Status/> 
@@ -186,8 +186,8 @@
     <ForeignReference>
       <Description>Youtube</Description>
       <Type>Youtube</Type>
-      <Id>JvbH5oGZR6M</Id>
-      <IdPrefix>http://</IdPrefix>
+      <Identity>JvbH5oGZR6M</Identity>
+      <IdentityPrefix>http://</IdentityPrefix>
       <URI>http://www.youtube.com/watch?v=JvbH5oGZR6M</URI>
       <Other>Interpret: Bob Benny Song: Hou toch van mij Punkte: 9 Platz: 6 Austragungsort: Frankreich (Cannes) Jahr: 1959.</Other>
       <Status/> 
@@ -195,8 +195,8 @@
     <ForeignReference>
       <Description>Spotify (Matched!)</Description>
       <Type>Spotify</Type>
-      <Id>2y9PZQQSbjzjQ0zBIXTWY7</Id>
-      <IdPrefix>http://</IdPrefix>
+      <Identity>2y9PZQQSbjzjQ0zBIXTWY7</Identity>
+      <IdentityPrefix>http://</IdentityPrefix>
       <URI>http://spotify TODO</URI>
       <Other/> 
       <Status/> 
@@ -205,7 +205,7 @@
       <Description>Wikipedia</Description>
       <Type>Data</Type>
       <Id/> 
-      <IdPrefix>http://</IdPrefix>
+      <IdentityPrefix>http://</IdentityPrefix>
       <URI/> 
       <Other>Short Text: </Other>
       <Status>Other:Automatic wiki search</Status>

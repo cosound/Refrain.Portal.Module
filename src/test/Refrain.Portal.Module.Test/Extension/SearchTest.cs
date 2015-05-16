@@ -20,8 +20,8 @@
 
             var actualQuery = "str_Text:(some\\ string*)^25Text:(some string*)^15str_Artist.Name:(some\\ string*)^15Artist.Name:(some string*)^5str_Country.Name:(some\\ string*)^5Country.Name:(some string*)";
             View.Verify(m => m.Query(It.Is<IQuery>(item =>
-                item.Query == actualQuery && 
-                item.Filter == "")));
+                item.Query == actualQuery &&
+                item.Filter == "(IsESC:True)")));
         }
 
         [Test]
@@ -33,7 +33,7 @@
 
             extension.Get(query);
 
-            var actual = "(Contest.Year:2000)AND(IsESC:true)";
+            var actual = "(Contest.Year:2000)AND(IsESC:True)";
             View.Verify(m => m.Query(It.Is<IQuery>(item =>
                 item.Query == "*:*" &&
                 item.Filter == actual)));
@@ -49,7 +49,7 @@
             extension.Get(query);
 
             var actualQuery = "str_Text:(2014\\ basim*)^25Text:(2014 basim*)^15str_Artist.Name:(2014\\ basim*)^15Artist.Name:(2014 basim*)^5str_Country.Name:(2014\\ basim*)^5Country.Name:(2014 basim*)";
-            var actualFilter = "(Contest.Year:2014)AND(IsESC:true)";
+            var actualFilter = "(Contest.Year:2014)AND(IsESC:True)";
             View.Verify(m => m.Query(It.Is<IQuery>(item =>
                 item.Query == actualQuery &&
                 item.Filter == actualFilter)));

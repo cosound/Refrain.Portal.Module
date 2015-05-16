@@ -52,7 +52,7 @@ namespace Refrain.Portal.Module.Domain
         {
             var Id = trackXml.MetadataXml.Descendants("ForeignReference")
                                                   .Where(item => item.Element("Type").Value == "Spotify")
-                                                  .Elements("Id")
+                                                  .Elements("Identity")
                                                   .FirstOrDefault();
 
             return Id == null ? null : Id.Value;

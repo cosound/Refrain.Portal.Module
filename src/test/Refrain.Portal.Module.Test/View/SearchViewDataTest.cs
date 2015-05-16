@@ -67,7 +67,7 @@
         {
             var data = new SearchViewData
                 {
-                    Id = new Guid("10000000-0000-0000-0000-000000000001"),
+                    Identity = new Guid("10000000-0000-0000-0000-000000000001"),
                     Text = "text",
                     ArtistName = "name",
                     CountryName = "countryname",

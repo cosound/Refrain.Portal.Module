@@ -73,7 +73,7 @@
 
                 yield return new SongViewData
                 {
-                    Id = manifest.Guid,
+                    Identity = manifest.Guid,
                     Title = song.Title,
                     ArtistName = song.ArtistName,
                     CountryName = song.CountryName,
@@ -171,8 +171,8 @@
 
     public class SongViewData : IViewData
     {
-        [Serialize]
-        public Guid Id { get; set; }
+        [Serialize("Id")]
+        public Guid Identity { get; set; }
 
         [Serialize]
         public string Title { get; set; }
@@ -209,7 +209,7 @@
             yield return new KeyValuePair<string, string>("Similarity.Type", Similarity.Type);
         }
 
-        public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", string.Format("{0}_{1}_{2}", Id.ToString(), Similarity.Type, DataSet.ToString(CultureInfo.InvariantCulture))); } }
+        public KeyValuePair<string, string> UniqueIdentifier { get { return new KeyValuePair<string, string>("Id", string.Format("{0}_{1}_{2}", Identity.ToString(), Similarity.Type, DataSet.ToString(CultureInfo.InvariantCulture))); } }
         public string Fullname { get { return "Refrain.Portal.Module.Test.View.SongViewData"; } }
     }
 

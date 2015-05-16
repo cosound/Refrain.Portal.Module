@@ -6,8 +6,8 @@ namespace Refrain.Portal.Module.Domain.Dto
 
     public class TwitterMood
     {
-        [Serialize]
-        public Guid Id { get; set; }
+        [Serialize("Id")]
+        public Guid Identity { get; set; }
 
         [Serialize]
         public string Country { get; set; }

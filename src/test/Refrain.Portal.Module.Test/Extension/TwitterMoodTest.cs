@@ -20,7 +20,7 @@
 
             View.Verify(m => m.GroupedQuery(It.Is<IQuery>(item =>
                 item.Query == "*:*" &&
-                item.Sort == "DateCreated desc" &&
+                item.Sort == "DateCreated asc" &&
                 item.Group.Field == "Country.Name")));
         }
         
@@ -35,7 +35,7 @@
 
             View.Verify(m => m.GroupedQuery(It.Is<IQuery>(item =>
                 item.Query == "Country.Name:country" &&
-                item.Sort == "DateCreated desc" &&
+                item.Sort == "DateCreated asc" &&
                 item.Group.Field == "Country.Name")));
         }
         
@@ -50,7 +50,7 @@
 
             View.Verify(m => m.GroupedQuery(It.Is<IQuery>(item =>
                 item.Query == "Country.Name:country1 country2 country3" &&
-                item.Sort == "DateCreated desc" &&
+                item.Sort == "DateCreated asc" &&
                 item.Group.Field == "Country.Name")));
         }
         
@@ -67,7 +67,7 @@
             View.Verify(m => m.GroupedQuery(It.Is<IQuery>(item =>
                 item.Query == "*:*" &&
                 item.Filter == "DateCreated:[* TO 2000-01-01T17:00:00Z]" &&
-                item.Sort == "DateCreated desc" &&
+                item.Sort == "DateCreated asc" &&
                 item.Group.Field == "Country.Name")));
         }
         
@@ -85,7 +85,7 @@
             View.Verify(m => m.GroupedQuery(It.Is<IQuery>(item =>
                 item.Query == "*:*" &&
                 item.Filter == "DateCreated:[2000-01-01T17:00:00Z TO 2001-01-01T17:00:00Z]" &&
-                item.Sort == "DateCreated desc" &&
+                item.Sort == "DateCreated asc" &&
                 item.Group.Field == "Country.Name")));
         }
         
@@ -102,7 +102,7 @@
             View.Verify(m => m.GroupedQuery(It.Is<IQuery>(item =>
                 item.Query == "*:*" &&
                 item.Filter == "DateCreated:[2000-01-01T17:00:00Z TO *]" &&
-                item.Sort == "DateCreated desc" &&
+                item.Sort == "DateCreated asc" &&
                 item.Group.Field == "Country.Name")));
         }
     }

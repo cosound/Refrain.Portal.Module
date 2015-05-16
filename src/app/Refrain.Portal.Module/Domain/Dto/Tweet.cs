@@ -4,8 +4,8 @@ namespace Refrain.Portal.Module.Domain.Dto
 
     public class Tweet
     {
-        [Serialize]
-        public string Id { get; set; }
+        [Serialize("Id")]
+        public string Identity { get; set; }
 
         [Serialize]
         public string EmbedCode { get; set; }

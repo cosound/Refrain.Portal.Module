@@ -4,6 +4,7 @@
     using System.Globalization;
     using System.Linq;
     using System.Xml.Linq;
+    using Chaos.Mcm.Data.Dto;
     using Dto;
     using Exceptions;
     using Object = Chaos.Mcm.Data.Dto.Object;
@@ -20,7 +21,7 @@
             if (metadata == null)
                 throw new CannotMapException(string.Format("Twitter Mood Metadata Schema not found one object {0}",  obj.Guid));
 
-            var datetime = metadata.MetadataXml.Descendants("Basics").Elements("CreatedDateTime").FirstOrDefault();
+            var datetime = metadata.MetadataXml.Descendants("Timeline").Elements("StartAtDateTime").FirstOrDefault();
             if(datetime == null) throw new CannotMapException("CreatedDateTime not found in metadata");
 
             var resultSummeryElement = metadata.MetadataXml.Descendants("ResultSummary").Descendants("Result").FirstOrDefault(r =>
@@ -46,7 +47,7 @@
             var tweetElements = metadata.MetadataXml.Descendants("ForeignReference").Where(item =>
                 {
                     var typeElement = item.Element("Type");
-                    var idElement = item.Element("Id");
+                    var idElement = item.Element("Identity");
                     var embedElement = item.Element("EmbeddingCode");
                     return typeElement != null && typeElement.Value == "Data:Twitter:Tweet" &&
                            idElement != null && !string.IsNullOrEmpty(idElement.Value) &&
@@ -55,15 +56,15 @@
 
             return new TwitterMood
                 {
-                    Id = obj.Guid,
+                    Identity = obj.Guid,
                     Valence = double.Parse(valence, CultureInfo.InvariantCulture),
                     Country = country,
                     Tweets = tweetElements.Select(item => new Tweet
                         {
                             EmbedCode = item.Element("EmbeddingCode").Value, 
-                            Id = item.Element("Id").Value
+                            Identity = item.Element("Identity").Value
                         }).ToList(),
-                    DateCreated = DateTime.ParseExact(datetime.Value, "yyyy-MM-dd'T'HH-mm-ss", CultureInfo.InvariantCulture)
+                    DateCreated = DateTime.ParseExact(datetime.Value, "yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'", CultureInfo.InvariantCulture)
                 };
         }
     }

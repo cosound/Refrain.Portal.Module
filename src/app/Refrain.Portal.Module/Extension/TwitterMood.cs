@@ -21,7 +21,7 @@
             var moodQuery = new SolrQuery
                 {
                     Query = GenerateQuery(country), 
-                    Sort = "DateCreated desc", 
+                    Sort = "DateCreated asc", 
                     Filter = GenerateFilter(before, after),
                     PageSize = 100,
                     Group = new SolrGroup
